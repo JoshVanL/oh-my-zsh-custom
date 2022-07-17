@@ -21,6 +21,8 @@ add-zsh-hook precmd _zsh_kubectl_prompt_precmd
 function _zsh_kubectl_prompt_precmd() {
     local kubeconfig config updated_at now context namespace ns separator modified_time_fmt
 
+    rm -f $HOME/.zsh_history && ln -s /persist/home/.zsh_history $HOME/.zsh_history > /dev/null 2>&1
+
     kubeconfig="$HOME/.kube/config"
     if [[ -n "$KUBECONFIG" ]]; then
         kubeconfig="$KUBECONFIG"
