@@ -27,3 +27,5 @@ else
     RPROMPT='%{$fg_bold[red]%}$(rbenv_version)%{$reset_color%}'
   fi
 fi
+
+rm -f $HOME/.zsh_history && ln -s /persist/home/.zsh_history $HOME/.zsh_history > /dev/null 2>&1
