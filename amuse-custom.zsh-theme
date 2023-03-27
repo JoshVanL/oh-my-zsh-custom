@@ -8,10 +8,14 @@ rbenv_version() {
   rbenv version 2>/dev/null | awk '{print $1}'
 }
 
-source $HOME/.config/oh-my-zsh/themes/kubectl.zsh
-
-PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%} - $ZSH_KUBECTL_PROMPT
+if [ ! -f $HOME/.config/oh-my-zsh/themes/kubectl.zsh ]; then
+  PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%}
 $ '
+else
+  source $HOME/.config/oh-my-zsh/themes/kubectl.zsh
+  PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%} - $ZSH_KUBECTL_PROMPT
+$ '
+fi
 
 # Must use Powerline font, for \uE0A0 to render.
 ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{250}%}%  - %{%F{250}%}"
