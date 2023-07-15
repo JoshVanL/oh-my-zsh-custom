@@ -9,11 +9,11 @@ rbenv_version() {
 }
 
 if [ ! -f $HOME/.config/oh-my-zsh/themes/kubectl.zsh ]; then
-  PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%}
+  PROMPT='%{%F{250}%}%n.%M %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%}
 $ '
 else
   source $HOME/.config/oh-my-zsh/themes/kubectl.zsh
-  PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%} - $ZSH_KUBECTL_PROMPT
+  PROMPT='%{%F{250}%}%n.%M %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%} - $ZSH_KUBECTL_PROMPT
 $ '
 fi
 
